@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Friend</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Ephesis&family=Ms+Madi&family=Rock+Salt&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css">
+    <!-- <style>
+      .chat-container { width: 300px; margin: 0 auto; }
+      .chat-box { max-height: 400px; overflow-y: scroll; padding: 10px; border: 1px solid #ccc; margin-bottom: 10px; }
+      .input-box { width: 100%; padding: 10px; }
+      .message { margin: 5px; padding: 10px; border-radius: 5px; }
+      .user-message { background-color: #d3f8d3; }
+      .bot-message { background-color: #f1f1f1; }
+    </style> -->
+    <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
+</head>
+<body>
+  <button class="floating-btn">
+    @
+</button>
+<div class="lcontainer">
+  <h1>Lens Place Scanner</h1>
+  <input type="file" id="imageInput" accept="image/*" />
+  <br>
+  <button onclick="scanImage()">Scan Place</button>
+
+  <div id="results">
+    <h2>Place Details</h2>
+    <div id="placeInfo"></div>
+  </div>
+</div>
+
+    <div class="container1" >
+        <div class="home show">
+            <video autoplay muted loop id="myVideo">
+                <source src="videos/homebg.mp4" type="video/mp4">
+              </video>
+            <div class="written">
+            <div class="teamname">
+                <h3 class="teamname">Team Quintet Presents</h3>
+            </div>
+            <div class="names">
+                <span class="name"><h1 class="big">H</h1><h2 class="small">ola</h2></span>
+                <span class="name"><h1 class="big">T</h1><h2 class="small">rouville</h2></span>
+            </div>
+            <div class="descrp">
+                <div class="line one">    </div>
+              <span class="description">  Your Travel Buddy   </span>
+                <div class="line two">           </div>
+            </div>
+            <div class="button">
+                <button class="enter bttn">Let's Be Friends!!</button>
+            </div></div>
+        </div>
+        <div class="hime">
+         <section class="intro" id="home" style="color: blueviolet;"> 
+          <nav>
+                        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                    <img src="images/logo.png" alt="logo" width="200" height="50" style="padding: 0px; margin: 0px;">
+                              
+                </a>
+                          <ul class="nav nav-pills" >
+                  <li class="nav-item"><button class="nav-link log">Login</button><li>
+                   <li class="nav-item"><a href="#about" class="nav-link">About</a></li> 
+                  <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                  <li class="nav-item"><a href="#pricing" class="nav-link">Bestfriends</a></li>
+                  <li class="nav-item"><a href="#faq" class="nav-link">FAQs</a></li>
+                  <li class="nav-item"><a href="#Contact" class="nav-link">Contact Us</a></li>
+                  <li class="nav-item"><button class="nav-link emer">Emergency Services</button><li>
+                </ul>
+              </header>            
+              </nav>
+              <div class="hopg">
+                <h1 class="tagline title anim">
+                  One step Destination to plan your next DESTINATION
+                </h1>
+                <p class="tagline anim">
+                  No more switching between different apps, tabs, and tools to keep track of your travel plans. Plan your itinerary, find lodging, and import reservations — all in one app.
+                </p>
+                <button class="login bttn anim">Let's Go</button>
+              </div>
+              <img src="images/robo.png" alt="a robo" class="robo anim"> 
+        </section>
+              <div class="intro inform">
+          <h1 class="feat">Features to replace all your other tools</h1>
+        <section id="features">
+          <input type="radio" name="position">
+          <input type="radio" name="position">
+          <input type="radio" name="position" checked>
+          <input type="radio" name="position">
+          <input type="radio" name="position">
+          <main class="carousel">
+          <div class="card" style="width: 26rem;">
+            <img src="images/Map.png" class="card-img-top" alt="imageof map">
+            <div class="card-body">
+              <p class="card-text"><h5>Interactive Map and Virtual Tours</h5></p>
+              <ul style="font-size: 0.9rem;">
+                <li><strong>360-degree Virtual Tours: </strong>Provide immersive 360-degree views of popular tourist destinations, hotels, landmarks, and more.</li>
+                <li><strong>Interactive City Maps: </strong>Allow users to explore destinations with interactive maps that highlight points of interest, restaurants, hotels, and transport options.</li>            
+              </ul>
+            </div>
+          </div>
+          <div class="card" style="width: 26rem;">
+            <img src="images/local exp.png" class="card-img-top" alt="localimg">
+            <div class="card-body">
+              <p class="card-text"><h5>Local Experiences & Activities</h5></p>
+              <ul style="font-size: 0.9rem;">
+                <li><strong>Bookings for Local Experiences: </strong>Integrate booking options for guided tours, cooking classes, adventure activities, local workshops, etc.</li>
+                <li><strong>Live Events and Festivals: </strong>Highlight upcoming local events, festivals, and exhibitions in each city or region.</li>            
+              </ul>
+            </div>
+          </div>
+          <div class="card" style="width: 26rem;">
+            <img src="images/travelassit.png" class="card-img-top" alt="travelassit">
+            <div class="card-body">
+              <p class="card-text"><h5>Real-Time Travel Assistance</h5></p>
+              <ul style="font-size: 0.9rem;">
+                <li><strong>Live Chat with Virtual Guides: </strong>Provide real-time assistance through live chat with a virtual tour guide or chatbot to answer questions about the destination.</li>
+                <li><strong>Emergency Information: </strong>Include emergency contact numbers (e.g., local police, embassy) and medical facilities.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card" style="width: 26rem;">
+            <img src="images/virtualai.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text"><h5>Personalized Recommendations</h5></p>
+              <ul style="font-size: 0.9rem;">
+                <li><strong>AI-Powered Recommendations: </strong>Use AI to suggest destinations, activities, and experiences based on user preferences (e.g., budget, travel style, previous trips).</li>
+                <li><strong>In-depth Destination Guides: </strong>Provide detailed information on countries, cities, or regions, including history, food, attractions, and local tips.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card" style="width: 26rem;">
+            <img src="images/multiling.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text"><h5><b>Multi-language Support</b></h5></p>
+              <ul style="font-size: 0.9rem;">
+                <li><b>Language Options: </b> Voice assitant and live translator along with 48+ languages.</li>
+                <li><strong>Cultural Adaptations: </strong>Tailor recommendations and travel advice based on the user's country of origin.</li>
+              </ul>
+            </div>
+          </div>
+        </main>
+        </section>
+        <hr>
+                  <section id="about">
+          <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img src="images/about us.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+              </div>
+              <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">About Us</h1>
+                <p class="lead">At <b><i>Hola Trouville</i></b> , our main aim to be a friend with our customers and make every trip their best trip. Travelers across the globe use the  site and app to browse more than a million reviews and opinions of a million accommodations, restaurants, experiences, airlines and cruises. Whether planning or on a trip, travelers turn to Hola Trouville to compare low prices on hotels, flights and cruises, book popular tours and attractions, as well as reserve tables at great restaurants. Tripadvisor, the ultimate travel companion, is available in 49 markets and 28 languages.
+                  Why choose us? We’re committed to quality, transparency, and customer satisfaction. But don’t just take our word for it—hear from our satisfied customers who’ve seen firsthand the impact of our solutions.</p>
+                              </div>
+            </div>
+          </div>
+          <div class="container px-4 py-5 review" id="icon-grid">
+            <h2 class="pb-2 border-bottom">What travelers are raving about</h2>
+        
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+              <div class="col d-flex align-items-start">
+                         <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">John D. – ⭐⭐⭐⭐⭐ (5/5)</h3>
+                  <p>Planning your trip by having all the attractions already plugged into a map makes trip planning so much easier.</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#cpu-fill"></use></svg>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Sarah L. – ⭐⭐⭐⭐ (4/5)</h3>
+                  <p>It seems to be this is my new travel app buddy. Very handy, convenient and very easy to use. It also recommends tourist destinations and nearby places. Kudos to the programmer. 👏👏👏👏
+
+                  </p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"></use></svg>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Emma R. – ⭐⭐⭐⭐⭐ (5/5)</h3>
+                  <p>So much easier to visualize and plan a road trip to my favourite rock climbing destinations and explore the area around.</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#home"></use></svg>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Jessica P. – ⭐⭐⭐⭐⭐ (5/5)</h3>
+                  <p>Love this app!!! I would recommend to anyone who is seriously planning a trip. It will take you through there entire process with ease and all the features you would ever need. The pro version has some features that would be nice to have, especially during the trip itself.</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speedometer2"></use></svg>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Kevin W. – ⭐⭐⭐ (3/5)</h3>
+                  <p>I have really appreciated the features of this app as I've planned a cross country road trip. visualizing the stages in the maps is very helpful. </p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#toggles2"></use></svg>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Alan S. – ⭐⭐⭐⭐⭐ (5/5)</h3>
+                  <p>Super useful app to plan a trip and create a bucket list of places to visit</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#geo-fill"></use></svg>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Natalie K. – ⭐⭐⭐ (3/5)</h3>
+                  <p>What a great travel app! So often we scroll sights and destinations and then can't find what we had scrolled passed! As an older wanderer this app kept me totally organized. I only used the fee version but would definitely subscribe to get the full benefits next time.</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#tools"></use></svg>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Chloe G. – ⭐⭐⭐⭐ (4/5)</h3>
+                  <p>A very good planning app for a group trip. a highlight point is that very important features are free. Highly recommended.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr>
+        
+        <section id="pricing">
+          <header> 
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+              <h1 class="display-4 fw-normal text-body-emphasis">Let Me Be Your BestFriend</h1>
+              <p class="fs-5 text-body-secondary">Purchase our top plans to get personalized experience..</p>
+            </div>
+            <main>
+              <div class="row row-cols-1 row-cols-md-3 mb-3 text-center pricing">               
+                              <div class="card mb-3 price" >
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1> <hr>
+                    <p class="card-text"> <ul class="list-unstyled mt-3 mb-4">
+                      <li>Personalized travel ideas</li>
+                      <li>Hotel Bookings & Restaurants reservation</li>  
+                      <li>Travel Quiz</li>
+                      <li>Travel timepass</li>
+                    </ul></p>
+                    <button class="bttn btn-primary">Befriend</button>
+                  </div>
+                </div>
+                  <div class="card text-center mb-3 price" >
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$1<small class="text-body-secondary fw-light">/trip</small></h1> <hr>
+                    <p class="card-text"><ul class="list-unstyled mt-3 mb-4">
+                      <li>App Support</li>
+                      <li>Weather forecasting</li>
+                      <li>Chat bot support</li>
+                      </ul></p>
+                    <button class="bttn btn-primary">Befriend</button>
+                  </div>
+                </div>
+                
+                <div class="card text-center price" >
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><b>BFF </b><small class="text-body-secondary fw-light">(</small>$15<small class="text-body-secondary fw-light">/month)</small></h1> <hr>
+                    <p class="card-text"><ul class="list-unstyled mt-3 mb-4">
+                      <li>Discounts on hotel booking</li>
+                      <li>Full travel Support</li>
+                      <li>Chatbot</li>
+                      <li>App Support</li>
+                                         </ul></p>
+                    <button class="bttn btn-primary">Befriend</button>
+                  </div>
+                </div>
+              </div>
+                     
+                          </main>
+          </header>
+        </section>
+     
+        <section id="faq" class="all">
+          <h1 class="display-4 fw-normal text-body-emphasis">FAQS</h1>
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">How can I contact customer support?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  You can reach our customer support team via email at holatrouville@gmail.com, or by calling +918348734423. Our team is available 24/7 and will be happy to assist you.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                  I’m having trouble with your website. What should I do?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  If you encounter any issues while browsing our website, try refreshing your page or clearing your browser cache. If the problem persists, please reach out to our support team at [support email] or [support phone number], and we will help resolve the issue.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                  Are there any discounts or promotions available?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  We frequently offer discounts, promotions, and special deals. Sign up for our newsletter to stay informed about the latest offers or check our "Deals" section on the website.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                  How can I find the best deals for my trip?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  To find the best deals, consider booking in advance, traveling during off-peak seasons, and subscribing to us for personalized budget & exclusive offers.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                  Can I book a vacation package?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                Yes, we offer a variety of vacation packages that include flights, hotels, and activities. You can customize your package based on your preferences and budget.
+                </div>
+              </div>
+            </div>
+         <hr>              
+        </section>
+      
+        <section id="Contact">
+          <div class="container">
+            <footer class="py-3 my-4">
+              <span>
+             <strong></strong>Contact Details:
+             <ul style="list-style: circle;">
+              <li>Call: +919373478487</li>
+              <li>Email:  holatrouville@gmail.com</li>
+              <li>Whatsapp: +919373478487</li>
+             </ul>
+            
+            <ul class="nav col-md-12 justify-content-end list-unstyled d-flex">
+              <li class="ms-3"><a class="text-body-secondary" href="#"> <img src="images/insta (1).png" alt="" class="bi" width="24" height="24"></a></li>
+              <li class="ms-3"><a class="text-body-secondary" href="#"> <img src="images/insta (2).png" alt="" class="bi" width="24" height="24"></a></li>
+              <li class="ms-3"><a class="text-body-secondary" href="#"> <img src="images/insta (3).png" alt="" class="bi" width="24" height="24"></a></li>
+              
+            </ul></span>
+            <hr>
+           
+
+              <p class="text-center">© 2024 Company, Inc</p>
+            </footer>
+            
+          </div>
+        </section>
+        </div>
+        </div>
+        
+    </div> 
+    <section id="login" style=" font-family: Arial, sans-serif;
+    background-color: #eea8f9;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;" class="logi">
+        <div class="login-container"  style="    
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;"
+    >
+          <h2>Login</h2>
+          <form id="loginForm" onsubmit="return validateForm()">
+              <div class="input-group">
+                  <label for="username">Username</label>
+                  <input type="text" id="username" name="username" required>
+                  <span id="usernameError" class="error-message"></span>
+              </div>
+              <div class="input-group">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" name="password" required>
+                  <span id="passwordError" class="error-message"></span>
+              </div>
+              <button type="submit" class="btn">Login</button>
+              <div class="signup-link">
+                  <p>Don't have an account? <a href="#">Sign up</a></p>
+              </div>
+              <h3>Aadhaar Authentication</h3>
+  
+              <!-- Aadhaar Number Form -->
+              <div>
+                <label for="aadhaarNumber">Enter Aadhaar Number (12 digits):</label>
+                <input type="text" id="aadhaarNumber" maxlength="12">
+                <button onclick="requestOtp()">Request OTP</button>
+              </div>
+            
+              <!-- OTP Verification Form -->
+              <div id="otpSection" style="display:none;">
+                <label for="otp">Enter OTP:</label>
+                <input type="text" id="otp" maxlength="6">
+                <button onclick="verifyOtp()">Verify OTP</button>
+              </div>
+          </form>
+      </div></section>
+          <div class="suggest">
+      <div class="container px-4 py-5" id="custom-cards">
+        <div class="travelsuggest">
+                <h1 class="pb-2 border-bottom" style="color: bisque; font-size: 2.5em;">Top <strong >DESTINATIONS </strong>for your next holiday</h1>
+                <div class="placesuggest">
+         <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                  <div class="col paris1">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('images/paris.png');">
+                      <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Paris</h3>
+                        <p>It's the City of Light, the City of Romance and the City of Fashion — but it's also more.</p>
+                        <small>Click to know more.</small>
+                                             </div>
+                    </div>
+                  </div>
+            
+                  <div class="col tokyo1">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('images/tokyo.png');">
+                      <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Tokyo</h3>
+                        <p>‘Japan’s Megacity’, Tokyo is one of the world's most exciting cities, with a culture that's rich in tradition and contemporary creativity.</p>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <div class="col dubai1">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('images/Dubai.png');">
+                      <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Dubai</h3>
+                       <p>Dubai is home to the tallest building in the world, the biggest shopping mall, the most luxurious hotels and one of the biggest artificial islands.</p>
+                      </div>
+                    </div>
+                  </div>
+               </div> </div>
+              </div>
+                <div class="question">
+                <div class="tA"> 
+<div class="talk">Don't feel like visiting these? <br>Let's suggest  you something according to your taste! </div><img src="images/robo.png" alt="a robot" style="height: 156px; width: 130px;">
+</div><div class="goquiz sug"><h3>Take Question</h3><p>Answers a series of questions that help us suggest you a place.</p><button class="goquiz bttn">Questions(free)</button></div>
+<div class="chat sug">
+  <h3>Talk with Trovie</h3><p>Talk to Trovie our chatbot and a get personalized plans.</p><button class="chat chat2 bttn">Talk with Trovie(BFF)</button>    
+</div>
+
+         </div>
+              </div>
+              <div class="appdown" >
+                <h1 >Download our Trouville App </h1>
+                <p>For more personalised and perfectly planned trip.</p>
+                <div class="li" style="background-color: beige; width: 560px; height: 2px;"></div>
+                <h4>Here's what our app offers-</h4>
+                <ul><li>Live Translations and voice assist</li>
+                  <li><b>Lens-</b>point at the thing and get full history of it.</li>
+                  <li>One on one chat buddy.</li>
+                  <li>Trip planned on perday basis.</li>
+                  <li>Weather forecasting</li>
+                </ul>
+                <button class="download bttn">Download</button>
+              </div>
+                     </div>
+                  
+                     <div class="containers">
+                      <div class="travelsuggest">
+                    
+                      <h1>Find Your Perfect Travel Destination</h1>
+                      <form id="preferencesForm">
+                          <div class="question1">
+                              <label for="tripType">What type of trip are you looking for?</label>
+                              <select id="tripType" name="tripType">
+                                  <option value="Relaxation">Relaxation</option>
+                                  <option value="Adventure">Adventure</option>
+                                  <option value="Culture">Culture</option>
+                                  <option value="Nature">Nature</option>
+                              </select>
+                          </div>
+              
+                          <div class="question1">
+                              <label for="climate">What is your preferred climate?</label>
+                              <select id="climate" name="climate">
+                                  <option value="Tropical">Tropical</option>
+                                  <option value="Cold">Cold</option>
+                                  <option value="Temperate">Temperate</option>
+                                  <option value="Arid">Arid</option>
+                              </select>
+                          </div>
+              
+                          <div class="question1">
+                              <label for="budget">What is your budget range?</label>
+                              <select id="budget" name="budget">
+                                  <option value="Low">Low</option>
+                                  <option value="Medium">Medium</option>
+                                  <option value="High">High</option>
+                              </select>
+                          </div>
+              
+                          <div class="question1">
+                              <label for="activities">What type of activities do you enjoy?</label>
+                              <select id="activities" name="activities" multiple>
+                                  <option value="Beach">Beach</option>
+                                  <option value="Hiking">Hiking</option>
+                                  <option value="Museums">Museums</option>
+                                  <option value="Shopping">Shopping</option>
+                                  <option value="Dining">Dining</option>
+                              </select>
+                          </div>
+              
+                          <button type="submit">Get Recommendations</button>
+                      </form>
+              
+                      <div id="recommendations" class="recommendations">
+                          <h2>Recommended Destinations:</h2>
+                          <ul id="destinationList"></ul>
+                      </div>
+                  </div></div>
+                      <div class="budgget" style="  font-family: Arial, sans-serif;
+            padding: 20px;">
+                        <h1>AI-Powered Travel Recommendations</h1>
+
+                        <form id="preferences-form">
+                            <div class="form-group">
+                                <label for="budget">Budget:</label>
+                                <select id="budget" name="budget">
+                                    <option value="low">Low</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="high">High</option>
+                                </select>
+                            </div>
+                    
+                            <div class="form-group">
+                                <label for="travel-style">Travel Style:</label>
+                                <select id="travel-style" name="travel_style">
+                                    <option value="adventure">Adventure</option>
+                                    <option value="relaxation">Relaxation</option>
+                                    <option value="culture">Culture</option>
+                                    <option value="luxury">Luxury</option>
+                                </select>
+                            </div>
+                    
+                            <div class="form-group">
+                                <label for="previous-trips">Previous Trips (comma-separated):</label>
+                                <input type="text" id="previous-trips" name="previous_trips">
+                            </div>
+                    
+                            <button type="submit">Get Recommendations</button>
+                        </form>
+                    
+                        <h2>Recommended Destinations and Activities</h2>
+                        <div id="recommendations"></div>
+                      </div>
+                      <div class="paris">
+                        <div class="cross1" style="position: fixed; top:10px; left:10px; z-index:2;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 26 26" >
+                          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                        </svg></div>
+                        <h1>PARIS  <small>,FRANCE</small></h1>
+                        <p style="margin-left:100px ;">Paris lives up to its hype: A city with unbelievable food and culture, plus stunning views everywhere you turn. With 18 arrondissements, it’s a lot to see in one trip, but each neighbourhood has a personality all its own. You can’t miss the iconic 7th, where art and history meet—there’s the Eiffel Tower, sure, but the impressive Musée du quai Branly is just a short walk away. It houses an amazing collection of indigenous art. Or, hit up Montmartre (the 18th), with its boho shops and cosy brasseries. It’s a must-stop on the way up or down from Sacre Coeur. While the French practically invented fine dining, don’t skip the street food—Paris has world-class kebabs and falafel. But no matter where you are, be sure to pop into a sidewalk cafe, sip a glass of wine, and people watch—it’s the way to get a taste of true Parisian culture.</p>                      
+                        
+                        <div class="hotels">
+                        <h1>Hotels:</h1>
+                      
+                        <div class="card mb-3" style="max-width: 500px; height: 190px;  background-color:beige  ;">
+                          <div class="row g-0">
+                            <div class="col-md-4">
+                              <img src="images/Le Meurice.png" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <h5 class="card-title"  style="color: blueviolet;">Le Meurice</h5>
+                                <p class="card-text">(LUXURY) <br> Location: 228 Rue de Rivoli, 1st Arrondissement</p>
+                                <a href="https://www.dorchestercollection.com/paris/le-meurice" class="btn btn-primary" style="background-color: blueviolet;">Book</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                          <div class="card mb-3" style="max-width: 500px; height: 190px;  background-color:bisque ;">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="images/Hotel des Arts.png" class="img-fluid rounded-start" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title"  style="color: blueviolet;">Hotel des Arts - Montmartre</h5>
+                                  <p class="card-text">(BUDGET FRIENDLY) <br> Location: 5 Rue Tholozé, 18th Arrondissement</p>
+                                  <a href="https://www.arts-hotel-paris.com/" class="btn btn-primary" style="background-color: blueviolet;">Book</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="hotels" style="margin-right:170px ;">
+                          <h1>RESTAURANTS</h1>
+                          <div class="card" style="width: 24rem; height: 550px; background-color:beige  ;">
+                            <img src="images/Le Marché des Enfants Rouges.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h4 class="card-title" style="color: blueviolet;">Le Marché des Enfants Rouges
+                              </h4>
+                              <p class="card-text">Details: <br>
+                                CUISINES: 
+                                French, European <br>
+                                Special Diets: 
+                                Vegetarian friendly <br>
+                                Meals:  
+                                Breakfast, Lunch, Dinner</p>
+                              <a href="https://fr.wikipedia.org/wiki/March%C3%A9_des_Enfants-Rouges" class="btn btn-primary" style="background-color: blueviolet;">Book Seat</a>
+                            </div>
+                          </div>
+                          <div class="card" style="width: 24rem; background-color:beige;">
+                            <img src="images/Michelin-Starred Restaurants.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h4 class="card-title" style="color: blueviolet;">Michelin-Starred Restaurants</h4>
+                              <p class="card-text">Michelin stars are a widely recognized award given by the Michelin Guide to restaurants that offer exceptional food, service, and ambiance. The Michelin Guide is a well-known rating guide for restaurants and hotels</p>
+                              <a href="https://guide.michelin.com/en/fr/ile-de-france/paris/restaurants?sort=distance" class="btn btn-primary" style="background-color: blueviolet; position: relative; bottom: 1%;">Book Seat</a>
+                            </div></div>
+                          </div>
+                         
+                    <h1>Explore Paris: </h1>
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <div class="cards-wrapper" >
+                          <div class="col">
+                            <div class="card shadow-sm" >
+                              <img src="images/paris.png" alt=""  class="bd-placeholder-img card-img-top" width="100%" height="35">
+                            
+                              <div class="card-body">
+                                <p class="card-text"><h3>Eiffel Tower</h3> Completed in 1889, this colossal landmark, although initially hated by many Parisians, is now a famous symbol of French civic pride.</p>
+                                                          </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="card shadow-sm">
+                              <img src="images/Sacré-Cœur Basilica.png" alt=""  class="bd-placeholder-img card-img-top" width="100%" height="35px">
+                            
+                              <div class="card-body">
+                                <p class="card-text"><h3>Sacré-Cœur Basilica</h3> The Dome of this 80-meter high mosaic decorated basilica makes it a world-famous monument. The Sacré Coeur basilica is one of the most famous monuments in the capital and definitely a must-see.</p>
+                                                          </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="card shadow-sm">
+                              <img src="images/Notre-Dame.png" alt=""  class="bd-placeholder-img card-img-top" width="100%" height="35px">
+                            
+                              <div class="card-body">
+                                <p class="card-text"><h4>Cathédrale Notre-Dame de Paris</h4>The iconic Notre Dame Cathedral Paris—meaning ‘Our Lady of Paris’—is a masterpiece of French Gothic architecture. Built back in the 12th century...</p>
+                                                          </div>
+                            </div>
+                          </div></div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="cards-wrapper">
+                          <div class="col">
+                            <div class="card shadow-sm">
+                              <img src="images/Louvre.png" alt=""  class="bd-placeholder-img card-img-top" width="100%" height="225">
+                              <p class="card-text"><h3>Louvre Museum</h3>One of the largest, oldest, and grandest museums in the world . Marvel at the museum’s greatest hits: the Mona Lisa, the Venus de Milo, Winged Victory, and stunning collections of prized paintings and Greek and Roman statues..</p>
+                                                          </div>
+                            </div>
+                            <div class="col">
+                              <div class="card shadow-sm">
+                                <img src="images/Champs-Élysées & Arc de Triomphe.png" alt=""  class="bd-placeholder-img card-img-top" width="80%" height="195">
+                              
+                                <div class="card-body">
+                                  <p class="card-text"><h4>Champs-Élysées & Arc de Triomphe</h4>the monument combines the commemorative with the symbolic and it has always played a major role in the national republican consciousness.</p>
+                                                            </div>
+                              </div>
+                            </div>
+                          <div class="col">
+                            <div class="card shadow-sm">
+                              <img src="images/Versailles Palace.png" alt=""  class="bd-placeholder-img card-img-top" width="100%" height="225">
+                            
+                              <div class="card-body">
+                                <p class="card-text"><h3>Versailles Palace</h3>The Palace had become an archetypal seat of power and continued to host the most important events in the history of France, such as the declaration of the German Empire, signed in 1871 following France's defeat at war by the Prussians.</p>
+                                                          </div>
+                            </div>
+                          </div></div>
+                        </div>
+                                              </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                   
+           
+            <div class="container px-4 py-5"  style=" color: lavender; margin-top: 30px; border-radius: 30px;">
+              <h2 class="pb-2">More about Paris:</h2> <hr>
+          
+              <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+                <div class="col d-flex flex-column align-items-start gap-2">
+                  <h2 class="fw-bold ">Learn more about place and culture</h2>
+                  <p class="">Here are some travel timepass that you can have to spend your freetime and gain more knowledge about the place u are visiting. </p>
+                  <a href="https://www.britannica.com/place/Paris" target="_blank" class="btn bttn bn btn-lg" >Read</a>
+                </div>
+          
+                <div class="col">
+                  <div class="row row-cols-1 row-cols-sm-2 g-4">
+                    <div class="col d-flex flex-column gap-2" >
+  <h4 class="fw-semibold mb-0 ">Best books about Paris<hr></h4>
+                      <p class="text-body-secondary"><ul>
+                        <li>Delicious Days in Paris by Jane Peach.</li>
+                        <li>Lunch in Paris by Elizabeth Bard.</li>
+                        <li>A Tale of Two Cities by Charles Dickens</li>
+                      </ul></p>
+                    </div>
+          
+                    <div class="col d-flex flex-column gap-2">
+                     
+                      <h4 class="fw-semibold mb-0 ">Good movies that showcase French culture<hr> </h4>
+                      <p class="text-body-secondary"><ul>
+                        <li>Amélie (Le Fabuleux Destin d'Amélie Poulain) (2001)</li>
+                        <li> The Intouchables (Intouchables) (2011)</li>
+                        <li>La Haine (1995)</li>
+                      </ul></p>
+                    </div>
+          
+                    <div class="col d-flex flex-column gap-2">
+                     
+                      <h4 class="fw-semibold mb-0 ">Paris Travel Playlist: <hr>                      </h4>
+                      <p class="text-body-secondary"><ul>
+                        <li>"La Vie en Rose" – Édith Piaf</li>
+                        <li>"Tous les mêmes" – Stromae                        </li>
+                        <li>"Paris, je t'aime" – Zaz</li>
+                      </ul></p>
+                    </div>
+          
+                    <div class="col d-flex flex-column gap-2">
+        <h4 class="fw-semibold mb-0">Podcasts <hr></h4>
+                      <p class="text-body-secondary"><ul>
+                        <li> <a href="https://theearfultower.com/" style="color: lavender;">"The Earful Tower"</a></li>
+                        <li><a href="https://www.parispaysanne.com/" style="color:lavender;">"Paris Paysanne"</a></li>
+                        <li><a href="https://theearfultower.com/" style="color:lavender;">"The Paris Podcast"</a></li>
+                      </ul></p>
+                    </div>
+                  </div>
+                </div>
+              </div><hr>
+            </div>
+            <h1>Travel Advice: </h1>                          <div class="containe">
+              <div class="row d-flex justify-content-center">
+                  <!-- Get Around Section -->
+                  <div class="col-4">
+                      <div class="card crd">
+                          <div class="card-header crd" id="headingGetAround" data-bs-toggle="collapse" data-bs-target="#collapseGetAround" aria-expanded="false" aria-controls="collapseGetAround" data-bs-parent="#accordionExample">
+                              <h5 class="mb-0">
+                                  Get around
+                              </h5>
+                          </div>
+                          <div id="collapseGetAround" class="collapse" aria-labelledby="headingGetAround">
+                              <div class="card-body crd">
+                                  <strong>Bicycle:</strong> Vélib' is a bike-share system with thousands of bicycle stations located across Paris and in some surrounding municipalities. Visitors can purchase a one- or seven-day subscription either at the docking stations or online.
+                              </div>
+                              <div class="card-body crd">
+                                  <strong>Train:</strong> RATP operates its metro and RER services daily from 5:30 a.m. to about 1:15 a.m. (2:15 a.m. on Friday and Saturday). The metro system is the city’s local underground subway network servicing central Paris, and the RER is the regional express network. More information about the network and fares can be found online.
+                              </div>
+                              <div class="card-body crd">
+                                  <strong>Taxis:</strong> Hailing down a taxi on the street in Paris can be difficult so it is best to find an official taxi stand. You can also book a taxi online or on your smartphone.
+                                  <br>
+                                  <strong>Ridesharing:</strong> Uber and Bolt are readily available in Paris on your smartphone.
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+      
+                  <!-- Get There Section -->
+                  <div class="col-4">
+                      <div class="card crd">
+                          <div class="card-header crd" id="headingGetThere" data-bs-toggle="collapse" data-bs-target="#collapseGetThere" aria-expanded="false" aria-controls="collapseGetThere" data-bs-parent="#accordionExample">
+                              <h5 class="mb-0">
+                                  Get there
+                              </h5>
+                          </div>
+                          <div id="collapseGetThere" class="collapse" aria-labelledby="headingGetThere">
+                              <div class="card-body crd">
+                                  <strong>Flying:</strong> Paris is served by two international airports: Paris-Charles de Gaulle (the second busiest airport in Europe) and Paris-Orly.
+                              </div>
+                              <div class="card-body crd">
+                                  <strong>Train:</strong> The Gare du Nord is a major transit hub for trains to Northern France and international destinations in Belgium, Germany, the Netherlands, and the United Kingdom.
+                              </div>
+                              <div class="card-body crd">
+                                  <strong>Best time to visit:</strong> Summer (June to August): Summer is festival season in Paris, with highlights including Paris L'Eté, Fnac Live, and Solidays, while the Bastille Day fireworks draw huge crowds and the Paris Plages festival brings the beach to the banks of the Seine. Temperatures average highs in the 70s F (20s C) and lows in the 50s F (Teens C).
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+      
+                  <!-- On the Ground Section -->
+                  <div class="col-4">
+                      <div class="card crd">
+                          <div class="card-header crd" id="headingOnTheGround" data-bs-toggle="collapse" data-bs-target="#collapseOnTheGround" aria-expanded="false" aria-controls="collapseOnTheGround" data-bs-parent="#accordionExample">
+                              <h5 class="mb-0">
+                                  On the ground
+                              </h5>
+                          </div>
+                          <div id="collapseOnTheGround" class="collapse" aria-labelledby="headingOnTheGround">
+                              <div class="card-body crd">
+                                  <strong>Voltage/plug types:</strong> The standard voltage in France is 230V and the standard frequency is 50Hz. The plug has two round pins.
+                                  <br>
+                                  <strong>Drinking:</strong> The federal legal age for buying and drinking alcohol is 18 years old.
+                                  <br>
+                                  <strong>Walking:</strong> Walk to the right of the sidewalk and step off to the side of the sidewalk if you want to stop to check your phone, look up directions, or want to take in a view.
+                                  <br>
+                                  <strong>Public transport:</strong> Allow others to disembark before boarding, don’t take up more than one seat, and stand to offer seating to pregnant women or someone with a disability.
+                                  <br>
+                                  <strong>Try to speak the language:</strong> Learn a few basic phrases as a sign of respect. Locals will often switch to English for your ease and comfort but they appreciate the effort.
+                                  <br>
+                                  <strong>Always greet people:</strong> A courteous, formal greeting in French, “Bonjour, Monsieur/Madame,” is always appreciated — this includes shop attendants, wait staff, hotel staff, and drivers.
+                                  <br>
+                                  <strong>Don’t talk loudly in public:</strong> It is considered rude and ugly.
+                                  <br>
+                                  <strong>Don’t expect fast service:</strong> Sales assistants in shops or wait staff in restaurants won’t approach you straight away — giving people time and space is an important part of French culture. Also, don’t expect wait staff to give you the bill when your meal is finished; you will have to ask for it.
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+      
+              </div>
+          </div>
+    <div class="container px-4 py-5" id="featured-3" style=" color: antiquewhite; margin-top: 30px; border-radius: 30px; background-color: rgba(32, 5, 58, .6) ;  ">
+      <h2 class="pb-2 ">Basic Necessities: </h2> <hr>
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+         
+          <h3 class="fs-2 ">Shopping: </h3>
+          <p>
+            1.Champs-Élysées <br>
+            2.Galeries Lafayette</p>
+                 </div>
+        <div class="feature col">
+          
+          <h3 class="fs-2 ">SUPERMARKETS-          </h3>
+          <p>1.Carrefour <br>
+            <small>Specialty: Known for good value and <br> a large selection of products.</small> <br>
+            2.Franprix <br>
+            <small>Specialty: Convenient for quick shopping and <br> offers many organic and eco-friendly products.</small></p>
+                  </div>
+        <div class="feature col">
+          
+          <h3 class="fs-2 ">HOSPITALS-</h3>
+          <p>1. Hôpital Pitié-Salpêtrière <br>
+            2. Hôpital Cochin</p>
+                 </div>
+      </div>
+      <hr>
+    </div>
+
+
+
+
+
+
+                  </div>
+                    
+                  <div class="tokyo">
+                    <div class="cross2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 26 26" >
+                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                      </svg></div>
+                    <h1>TOKYO  <small>,JAPAN</small></h1>
+                    <p style="margin-left:100px ;">Tokyo, Japan’s vibrant capital, is a city that perfectly blends the ancient with the modern, offering something for every type of traveler</p>
+                    <div id="carouselExampleCaptions" class="carousel slide" style="width: 700px; height: 400px; margin: auto; ">
+                      <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      </div>
+                      <div class="carousel-inner" style="border-radius: 25px;">
+                        <div class="carousel-item active">
+                          <img src="images/tokyo1.png" class="d-block w-100" alt="...">
+                         
+                        </div>
+                        <div class="carousel-item">
+                          <img src="images/tokyo2.png" class="d-block w-100" alt="...">
+                          
+                        </div>
+                        <div class="carousel-item">
+                          <img src="images/tokyo3.png" class="d-block w-100" alt="...">
+                         
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                    <div class="hotels">
+                    <h1>Hotels:</h1>
+                  
+                    <div class="card mb-3" style="max-width: 500px; height: 190px;  background-color:beige  ;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="images/Le Meurice.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title"  style="color: blueviolet;">APA Hotel Nishi Shinjuku Gochome Eki Tower</h5>
+                            <p class="card-text">(LUXURY)</p>
+                            <a href="https://www3.apahotel.com/hotel/syutoken/tokyo/nishishinjuku-tower/" class="btn btn-primary" style="background-color: blueviolet;">Book</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+                      <div class="card mb-3" style="max-width: 500px; height: 190px;  background-color:bisque ;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="images/Hotel des Arts.png" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title"  style="color: blueviolet;">TOKYO-W-inn Asakusa</h5>
+                              <p class="card-text">(BUDGET FRIENDLY)</p>
+                              <a href="https://www.booking.com/hotel/jp/tokyo-w-inn-asakusa.en-gb.html?aid=356980&label=gog235jc-1DCAsodUITdG9reW8tdy1pbm4tYXNha3VzYUgzWANobIgBAZgBCbgBF8gBDNgBA-gBAYgCAagCA7gCiansugbAAgHSAiQzNjNjN2VlMC0wNjE4LTQ3NTMtYTYxNC00ZjA1MDc3MzIxNDnYAgTgAgE&sid=ac39e08f06b5233910d35c5d1c4c1080&dist=0&keep_landing=1&sb_price_type=total&type=total&" class="btn btn-primary" style="background-color: blueviolet;">Book</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="hotels" style="margin-right:170px ;">
+                      <h1>RESTAURANTS</h1>
+                      <div class="card" style="width: 24rem; height: 550px; background-color:beige  ;">
+                        <img src="images/Le Marché des Enfants Rouges.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h4 class="card-title" style="color: blueviolet;">Sukiyabashi Jiro
+                          </h4>
+                          <p class="card-text">(famous from the documentary Jiro Dreams of Sushi).
+                          </p>
+                          <a href="https://en.wikipedia.org/wiki/Sukiyabashi_Jiro" class="btn btn-primary" style="background-color: blueviolet;">Book Seat</a>
+                        </div>
+                      </div>
+                      <div class="card" style="width: 24rem; background-color:beige;">
+                        <img src="images/Michelin-Starred Restaurants.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h4 class="card-title" style="color: blueviolet;">Ichiryu, Shinjuku Gyoen Ramen Street, and Afuri</h4>
+                          <p class="card-text">(known for yuzu-flavored ramen).</p>
+                          <a href="https://www.afuriramen.com/" class="btn btn-primary" style="background-color: blueviolet; position: relative; bottom: 1%;">Book Seat</a>
+                        </div></div>
+                      </div>
+                      <h1>Travel Advice: </h1>                          <div class="containe">
+                        <div class="row d-flex justify-content-center">
+                            <!-- Get Around Section -->
+                            <div class="col-4">
+                                <div class="card crd">
+                                    <div class="card-header crd" id="headingGetAround" data-bs-toggle="collapse" data-bs-target="#collapseGetAround" aria-expanded="false" aria-controls="collapseGetAround" data-bs-parent="#accordionExample">
+                                        <h5 class="mb-0">
+                                            Get around
+                                        </h5>
+                                    </div>
+                                    <div id="collapseGetAround" class="collapse" aria-labelledby="headingGetAround">
+                                        <div class="card-body crd">
+                                            <strong>Monorails (Tokyo Monorail & Other Lines):</strong> <br> Tokyo Monorail: This is a convenient and scenic option, especially for reaching Tokyo International Airport (Haneda). It connects the airport with the city center. <br>
+                                            Other Monorail Lines: The Yurikamome line connects Shimbashi to Odaiba, offering beautiful views of Tokyo Bay.
+                                        </div>
+                                        <div class="card-body crd">
+                                            <strong>Tokyo Metro (Subway System):</strong>Network: Tokyo has an extensive and reliable subway system consisting of 13 lines operated by Tokyo Metro and Toei Subway. <br>
+                                            Ticketing: You can buy single tickets or use rechargeable cards like Suica and Pasmo for easy access. <br>
+                                            Convenience: Subway stations are well-signposted in both Japanese and English, making it easy for tourists to navigate.
+                                            Main Lines: Hibiya Line, Ginza Line, Chiyoda Line, etc.
+                                        </div>
+                                        <div class="card-body crd">
+                                            <strong> Buses (Toei & Private):</strong>Toei Buses: These are operated by the Tokyo Metropolitan Bureau of Transportation and connect various areas that might not be served by trains. <br>
+                                            Private Buses: Other private bus companies run services across Tokyo. Buses accept Suica and Pasmo cards as payment. <br>
+                                            Route Maps: Many bus stops are equipped with route maps in English.
+                                            <br>
+                                            <strong>Suica/Pasmo Cards:</strong>Contactless Payment: These rechargeable smart cards allow you to easily pay for trains, buses, taxis, and even purchases in vending machines or convenience stores. <br>
+                                            Tourist Options: Suica and Pasmo cards also offer special versions for tourists with additional perks, like discounts on certain attractions.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Get There Section -->
+                            <div class="col-4">
+                                <div class="card crd">
+                                    <div class="card-header crd" id="headingGetThere" data-bs-toggle="collapse" data-bs-target="#collapseGetThere" aria-expanded="false" aria-controls="collapseGetThere" data-bs-parent="#accordionExample">
+                                        <h5 class="mb-0">
+                                            Get there
+                                        </h5>
+                                    </div>
+                                    <div id="collapseGetThere" class="collapse" aria-labelledby="headingGetThere">
+                                        <div class="card-body crd">
+                                            <strong>Flying:</strong>Tokyo is serviced by two major airports, Narita and Haneda. Haneda is closer to the city.
+                                        </div>
+                                        <div class="card-body crd">
+                                            <strong>Train:</strong>The Japan rail network is extensive and trains from other cities could arrive in multiple stations in Tokyo. The most serviced would include Tokyo Station, Shibuya Station and Shinjuku Station.
+                                        </div>
+                                        <div class="card-body crd">
+                                            <strong>Best time to visit:</strong> October to February: Tokyo is a great destination all year round. However, the summer months can be excruciatingly hot. Avoid July, August, and early September if you don’t like to sweat as the average temperature over these months hovers at 85 Fahrenheit (29 Celsius). Tokyo’s high season falls between mid-March to late April, especially because many domestic and foreign travelers like to come at that time to see the cherry blossoms. Similarly, October and early November are peak times to view the fall foliage.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- On the Ground Section -->
+                            <div class="col-4">
+                                <div class="card crd">
+                                    <div class="card-header crd" id="headingOnTheGround" data-bs-toggle="collapse" data-bs-target="#collapseOnTheGround" aria-expanded="false" aria-controls="collapseOnTheGround" data-bs-parent="#accordionExample">
+                                        <h5 class="mb-0">
+                                            On the ground
+                                        </h5>
+                                    </div>
+                                    <div id="collapseOnTheGround" class="collapse" aria-labelledby="headingOnTheGround">
+                                        <div class="card-body crd">
+                                            <strong>Voltage/plug types:</strong>Typically these are 100 Volts / 50-60 Hz. (You will occasionally find 200 Volt outlets for larger appliances like air-conditioning units.) Plugs are Type A and B.
+                                            <br>
+                                            <strong>Counting your change:</strong> Do not count change in view of the person who gave it to you. It is also considered rude.
+                                            <br>
+                                            <strong>Walking:</strong> Walk to the right of the sidewalk and step off to the side of the sidewalk if you want to stop to check your phone, look up directions, or want to take in a view.
+                                            <br>
+                                            <strong>Public transport:</strong>Try to be quiet in trains, at restaurants, and at your hotel. Japanese culture puts great emphasis on consideration for others and maintaining a quiet and harmonious atmosphere.
+                                            <br>
+                                            <strong>Shoes: </strong>Remove your shoes when entering private homes, ryokans, and even some restaurants and offices.
+                                            <br>
+                                            <strong>Blowing your nose:</strong>Try not to blow your nose in public, and avoid both eating and drinking on the street (ok in parks). It is considered rude.
+                                            <br>
+                                            <strong>Tattoos:</strong> If you have a tattoo, forget trying to visit a Japanese hot spring. Unless you have booked a hotel room with a private bath, you won’t be able to enter.
+                                            <br>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
+                <h1>Explore Tokyo: </h1>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="width: 80%; margin: auto;">
+                  <div class="col">
+                    <div class="card shadow-sm">
+                      <img src="images/paris.png" alt=""  class="bd-placeholder-img card-img-top" width="100%" height="195">
+                    
+                      <div class="card-body">
+                        <p class="card-text"><h3>Shibuya Crossing</h3> Completed in 1889, this colossal landmark, although initially hated by many Parisians, is now a famous symbol of French civic pride.</p>
+                                                  </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card shadow-sm">
+                      <img src="images/Notre-Dame.png" alt=""  class="bd-placeholder-img card-img-top" width="100%" height="195">
+                    
+                      <div class="card-body">
+                        <p class="card-text"><h4>Tokyo Skytree</h4>The iconic Notre Dame Cathedral Paris—meaning ‘Our Lady of Paris’—is a masterpiece of French Gothic architecture. Built back in the 12th century...</p>
+                                                  </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card shadow-sm">
+                      <img src="images/Louvre.png" alt=""  class="bd-placeholder-img card-img-top" width="100%" height="225">
+                      <p class="card-text"><h3>Meiji Shrine</h3>One of the largest, oldest, and grandest museums in the world . Marvel at the museum’s greatest hits: the Mona Lisa, the Venus de Milo, Winged Victory, and stunning collections of prized paintings and Greek and Roman statues..</p>
+                                                  </div>
+                    </div>
+                  
+                  <div class="col">
+                    <div class="card shadow-sm">
+                      <img src="images/Versailles Palace.png" alt=""  class="bd-placeholder-img card-img-top" width="100%" height="225">
+                    
+                      <div class="card-body">
+                        <p class="card-text"><h3>Senso-ji Temple (Asakusa)</h3>The Palace had become an archetypal seat of power and continued to host the most important events in the history of France, such as the declaration of the German Empire, signed in 1871 following France's defeat at war by the Prussians.</p>
+                                                  </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card shadow-sm">
+                      <img src="images/Champs-Élysées & Arc de Triomphe.png" alt=""  class="bd-placeholder-img card-img-top" width="80%" height="195">
+                    
+                      <div class="card-body">
+                        <p class="card-text"><h4>Tokyo National Museum </h4>the monument combines the commemorative with the symbolic and it has always played a major role in the national republican consciousness.</p>
+                                                  </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card shadow-sm">
+                      <img src="images/Sacré-Cœur Basilica.png" alt=""  class="bd-placeholder-img card-img-top" width="100%" height="205">
+                    
+                      <div class="card-body">
+                        <p class="card-text"><h3>Tsukiji Outer Market</h3> The Dome of this 80-meter high mosaic decorated basilica makes it a world-famous monument. The Sacré Coeur basilica is one of the most famous monuments in the capital and definitely a must-see.</p>
+                                                  </div>
+                    </div>
+                  </div>
+          </div>
+       
+        <div class="container px-4 py-5"  style=" color: brown; margin-top: 30px; border-radius: 30px;">
+          <h2 class="pb-2">More about Tokyo:</h2> <hr>
+      
+          <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+            <div class="col d-flex flex-column align-items-start gap-2">
+              <h2 class="fw-bold ">Learn more about place and culture</h2>
+              <p class="">Here are some travel timepass that you can have to spend your freetime and gain more knowledge about the place u are visiting. </p>
+              <a href="https://bit.ly/3dId489" target="_blank" class="btn bttn bn btn-lg" >Read</a>
+            </div>
+      
+            <div class="col">
+              <div class="row row-cols-1 row-cols-sm-2 g-4">
+                <div class="col d-flex flex-column gap-2" >
+<h4 class="fw-semibold mb-0 ">Best books about Tokyo<hr></h4>
+                  <p class="text-body-secondary"><ul>
+                    <li>Guides to Tokyo: Books like "Tokyo: A Cultural History" by Stephen Mansfield and "The Last Shogun" by Mark Ravina offer historical and cultural insights into Tokyo.
+                    </li>
+                    <li>Travel Books: "Lonely Planet Tokyo", "Time Out Tokyo", or "DK Eyewitness Travel Guide: Tokyo" are great for picking up facts, tips, and city trivia that can make your time in Tokyo more engaging.</li>
+                    <li>Manga: Reading manga is not just fun but can also teach you about Japanese culture and history through storytelling. "Akira", "Naruto", and "One Piece" give cultural context and history while offering entertainment.</li>
+                  </ul></p>
+                </div>
+      
+                <div class="col d-flex flex-column gap-2">
+                 
+                  <h4 class="fw-semibold mb-0 ">Good movies that showcase Tokyo culture<hr> </h4>
+                  <p class="text-body-secondary"><ul>
+                    <li>Tokyo Documentaries: Watching documentaries about Tokyo’s history, culture, and modern developments can give you a deeper appreciation for the city. Some notable documentaries include "Tokyo: The Rising Sun" and "The Tokyo Project".</li>
+                    <li> Tampopo (1985)</li>
+                    <li>The Tokyo Trial (2016)</li>
+                  </ul></p>
+                </div>
+      
+                <div class="col d-flex flex-column gap-2">
+                 
+                  <h4 class="fw-semibold mb-0 ">Tokyo Travel Playlist: <hr>                      </h4>
+                  <p class="text-body-secondary"><ul>
+                    <li>Music Genres: Explore traditional and modern Japanese music. From Gagaku (ancient court music) to J-Pop and City Pop, Tokyo has a rich and diverse music culture. Apps like Spotify or Apple Music offer curated playlists like “Japanese Essentials” or “Tokyo Sounds.”</li>
+                 <li>Haru no Umi (春の海)</li>
+                 <li>Yuki no Furu Machi (雪の降る町)</li>
+                
+                  </ul></p>
+                </div>
+      
+                <div class="col d-flex flex-column gap-2">
+    <h4 class="fw-semibold mb-0">Podcasts <hr></h4>
+                  <p class="text-body-secondary"><ul>
+                    <li> <a href="https://theearfultower.com/" style="color: brown ;">"Tokyo Podcast": Covers a wide range of topics, from history to culture and urban life in Tokyo.</a></li>
+                    <li><a href="https://www.parispaysanne.com/" style="color: brown;">"The Tokyo Reporter": Offers insights into Tokyo’s unique social dynamics, local news, and traditions.
+                    </a></li>
+                    <li><a href="https://theearfultower.com/" style="color: brown;">"Abroad in Japan": While broader, this podcast explores life in Japan and the unique aspects of Tokyo.</a></li>
+                  </ul></p>
+                </div>
+              </div>
+            </div>
+          </div><hr>
+        </div>
+
+<div class="container px-4 py-5" id="featured-3" style=" color: brown; margin-top: 30px; border-radius: 30px;">
+  <h2 class="pb-2 ">Basic Necessities: </h2> <hr>
+  <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="feature col">
+     
+      <h3 class="fs-2 ">Shopping: </h3>
+      <p>
+        1.Shinjuku - One of Tokyo's largest shopping and entertainment districts. <br>
+        2.Harajuku - High fashion vs youth trends and counter culture.
+      </p>
+             </div>
+    <div class="feature col">
+      
+      <h3 class="fs-2 ">SUPERMARKETS-          </h3>
+      <p> <a href="http://www.maruetsu.co.jp/store/9418/?utm_source=google&utm_medium=gmbtop&utm_campaign=9418shinjukurokuchome" target="_blank" rel="noopener noreferrer">1.Maruetsu</a> <br>
+        <a href="http://www.seiyu.co.jp/shop/
+" target="_blank" rel="noopener noreferrer"> 2.Seiyu Supermarket</a>
+           </p>
+              </div>
+    <div class="feature col">
+      
+      <h3 class="fs-2 ">AIRPORTS- </h3>
+      <p>1.Haneda Airport  <br>
+        2.Narita Airport</p>
+             </div>
+  </div>
+  <hr>
+</div>
+
+
+
+
+
+
+              </div>
+              <div class="suggest1">
+                <div class="travelsuggest">
+                    <h1 class="pb-2 " style="color: bisque; font-size: 2.5em;">Top  <br><strong >Hill Stations </strong> <br> for you</h1>
+                    <div class="placesuggest">
+             <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                      <div class="col srinagar1">
+                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('images/paris.png');">
+                          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">SRINAGAR</h3>
+                            <p>Srinagar is a modern waterworld, dominated by Dal Lake and its twisting waterways, tree-lined Nagin Lake, and the Jhelum River</p>
+                            <small>Click to know more.</small>
+                        </div>
+                        </div>
+                      </div>
+                
+                      <div class="col tokyo1">
+                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('images/tokyo.png');">
+                          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">SHIMLA</h3>
+                            <p>Snow-capped Himalayan peaks and green pastures surround Shimla, the capital of Himachal Pradesh.</p>
+                          </div>
+                        </div>
+                      </div>
+                
+                      <div class="col dubai1">
+                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('images/Dubai.png');">
+                          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">QUEENSTOWN</h3>
+                           <p>Queenstown, New Zealand is perhaps most famous for its natural beauty – built on Lake Wakatipu and surrounded by stunning mountain ranges such as The Remarkables, Cecil Peak, and Walter Peak</p>
+                          </div>
+                        </div>
+                      </div>
+                   </div> </div>
+                  </div>
+                 
+                </div>
+                <div class="srinagar">
+                  <div class="cross1" style="position: fixed; top:10px; left:10px; z-index:2;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 26 26" >
+                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                  </svg></div>
+                  <h1>SRINAGAR,<small> KASHMIR</small></h1>
+                  <p style="margin-left:100px ;">Srinagar is a modern waterworld, dominated by Dal Lake and its twisting waterways, tree-lined Nagin Lake, and the Jhelum River. Engulf yourself in local culture by embracing your sea legs and renting one of the wooden boats called shikaras for a daytime or twilight cruise. On land, stroll through the terraced hillsides of the 400-year-old Mughal Gardens, created by Emperor Jehangir for his wife, and shop for indigenous crafts like hand-woven silks and embroidered shawls.p>                      
+                  
+                  <div class="hotels">
+                  <h1>Hotels:</h1>
+                
+                  <div class="card mb-3" style="max-width: 500px; height: 190px;  background-color:beige  ;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="images/Le Meurice.png" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title"  style="color: blueviolet;">Fabhotel-the legend residency</h5>
+                          <p class="card-text">(LUXURY)</p>
+                          <a href="https://www.makemytrip.com/hotels/houseboat_aristotle-details-srinagar.html" class="btn btn-primary" style="background-color: blueviolet;">Book</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                    <div class="card mb-3" style="max-width: 500px; height: 190px;  background-color:bisque ;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="images/Hotel des Arts.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title"  style="color: blueviolet;">John's homestay</h5>
+                            <p class="card-text">(BUDGET FRIENDLY)</p>
+                            <a href="https://www.makemytrip.com/hotels/johns_homestay-details-srinagar.html
+            " class="btn btn-primary" style="background-color: blueviolet;">Book</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hotels" style="margin-right:170px ;">
+                    <h1>RESTAURANTS</h1>
+                    <div class="card" style="width: 24rem; height: 550px; background-color:beige  ;">
+                      <img src="images/Le Marché des Enfants Rouges.png" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: blueviolet;">nathu sweets            </h4>
+                               <a href="https://www.tripadvisor.in/Restaurant_Review-g297623-d4299425-Reviews-Nathu_Sweets-Srinagar_Srinagar_District_Kashmir_Jammu_and_Kashmir.html
+            " class="btn btn-primary" style="background-color: blueviolet;">Book Seat</a>
+                      </div>
+                    </div>
+                    <div class="card" style="width: 24rem; background-color:beige;">
+                      <img src="images/Michelin-Starred Restaurants.png" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: blueviolet;">earthen oven restaurant</h4>
+                       
+                        <a href="https://www.tripadvisor.in/Restaurant_Review-g297623-d12880623-Reviews-Earthen_Oven_Restaurant-Srinagar_Srinagar_District_Kashmir_Jammu_and_Kashmir.html" class="btn btn-primary" style="background-color: blueviolet; position: relative; bottom: 1%;">Book Seat</a>
+                      </div></div>
+                    </div>
+                   
+              <h1>Explore Srinagar: </h1>
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="cards-wrapper" >
+                    <div class="col">
+                      <div class="card shadow-sm" >
+                        <img src="images/paris.png" alt=""  class="bd-placeholder-img card-img-top" width="100%" height="35">
+                      
+                        <div class="card-body">
+                          <p class="card-text"><h3>.Doodhpathri</h3> </p>
+                                                    </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card shadow-sm">
+                        <img src="images/Sacré-Cœur Basilica.png" alt=""  class="bd-placeholder-img card-img-top" width="100%" height="35px">
+                      
+                        <div class="card-body">
+                          <p class="card-text"><h3>Tulip garden </h3></p>
+                                                    </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card shadow-sm">
+                        <img src="images/Notre-Dame.png" alt=""  class="bd-placeholder-img card-img-top" width="100%" height="35px">
+                      
+                        <div class="card-body">
+                          <p class="card-text"><h4>Sonamarg
+                          </h4></p>
+                                                    </div>
+                      </div>
+                    </div></div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="cards-wrapper">
+                    <div class="col">
+                      <div class="card shadow-sm">
+                        <img src="images/Louvre.png" alt=""  class="bd-placeholder-img card-img-top" width="100%" height="225">
+                        <p class="card-text"><h3>Gulmarg
+                        </h3></p>
+                                                    </div>
+                      </div>
+                      <div class="col">
+                        <div class="card shadow-sm">
+                          <img src="images/Champs-Élysées & Arc de Triomphe.png" alt=""  class="bd-placeholder-img card-img-top" width="80%" height="195">
+                        
+                          <div class="card-body">
+                            <p class="card-text"><h4>dal lake 
+                            </h4></p>
+                                                      </div>
+                        </div>
+                      </div>
+                    <div class="col">
+                      <div class="card shadow-sm">
+                        <img src="images/Versailles Palace.png" alt=""  class="bd-placeholder-img card-img-top" width="100%" height="225">
+                      
+                        <div class="card-body">
+                          <p class="card-text"><h3>houseboat Aristotle excellence </h3></p>
+                                                    </div>
+                      </div>
+                    </div></div>
+                  </div>
+                                        </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+             
+            
+            <div class="container px-4 py-5"  style=" color: lavender; margin-top: 30px; border-radius: 30px;">
+            <h2 class="pb-2">More about Paris:</h2> <hr>
+            
+            <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+            <div class="col d-flex flex-column align-items-start gap-2">
+            <h2 class="fw-bold ">Learn more about place and culture</h2>
+            <p class="">Here are some travel timepass that you can have to spend your freetime and gain more knowledge about the place u are visiting. </p>
+            <a href="https://www.britannica.com/place/Paris" target="_blank" class="btn bttn bn btn-lg" >Read</a>
+            </div>
+            
+            <div class="col">
+            <div class="row row-cols-1 row-cols-sm-2 g-4">
+              <div class="col d-flex flex-column gap-2" >
+            <h4 class="fw-semibold mb-0 ">Best books about Paris<hr></h4>
+                <p class="text-body-secondary"><ul>
+                  <li>Delicious Days in Paris by Jane Peach.</li>
+                  <li>Lunch in Paris by Elizabeth Bard.</li>
+                  <li>A Tale of Two Cities by Charles Dickens</li>
+                </ul></p>
+              </div>
+            
+              <div class="col d-flex flex-column gap-2">
+               
+                <h4 class="fw-semibold mb-0 ">Good movies that showcase French culture<hr> </h4>
+                <p class="text-body-secondary"><ul>
+                  <li>Amélie (Le Fabuleux Destin d'Amélie Poulain) (2001)</li>
+                  <li> The Intouchables (Intouchables) (2011)</li>
+                  <li>La Haine (1995)</li>
+                </ul></p>
+              </div>
+            
+              <div class="col d-flex flex-column gap-2">
+               
+                <h4 class="fw-semibold mb-0 ">Paris Travel Playlist: <hr>                      </h4>
+                <p class="text-body-secondary"><ul>
+                  <li>"La Vie en Rose" – Édith Piaf</li>
+                  <li>"Tous les mêmes" – Stromae                        </li>
+                  <li>"Paris, je t'aime" – Zaz</li>
+                </ul></p>
+              </div>
+            
+              <div class="col d-flex flex-column gap-2">
+            <h4 class="fw-semibold mb-0">Podcasts <hr></h4>
+                <p class="text-body-secondary"><ul>
+                  <li> <a href="https://theearfultower.com/" style="color: lavender;">"The Earful Tower"</a></li>
+                  <li><a href="https://www.parispaysanne.com/" style="color:lavender;">"Paris Paysanne"</a></li>
+                  <li><a href="https://theearfultower.com/" style="color:lavender;">"The Paris Podcast"</a></li>
+                </ul></p>
+              </div>
+            </div>
+            </div>
+            </div><hr>
+            </div>
+            <h1>Travel Advice: </h1>                          <div class="containe">
+            <div class="row d-flex justify-content-center">
+            <!-- Get Around Section -->
+            <div class="col-4">
+                <div class="card crd">
+                    <div class="card-header crd" id="headingGetAround" data-bs-toggle="collapse" data-bs-target="#collapseGetAround" aria-expanded="false" aria-controls="collapseGetAround" data-bs-parent="#accordionExample">
+                        <h5 class="mb-0">
+                            Get around
+                        </h5>
+                    </div>
+                    <div id="collapseGetAround" class="collapse" aria-labelledby="headingGetAround">
+                        <div class="card-body crd">
+                            <strong>Bicycle:</strong> Vélib' is a bike-share system with thousands of bicycle stations located across Paris and in some surrounding municipalities. Visitors can purchase a one- or seven-day subscription either at the docking stations or online.
+                        </div>
+                        <div class="card-body crd">
+                            <strong>Train:</strong> RATP operates its metro and RER services daily from 5:30 a.m. to about 1:15 a.m. (2:15 a.m. on Friday and Saturday). The metro system is the city’s local underground subway network servicing central Paris, and the RER is the regional express network. More information about the network and fares can be found online.
+                        </div>
+                        <div class="card-body crd">
+                            <strong>Taxis:</strong> Hailing down a taxi on the street in Paris can be difficult so it is best to find an official taxi stand. You can also book a taxi online or on your smartphone.
+                            <br>
+                            <strong>Ridesharing:</strong> Uber and Bolt are readily available in Paris on your smartphone.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Get There Section -->
+            <div class="col-4">
+                <div class="card crd">
+                    <div class="card-header crd" id="headingGetThere" data-bs-toggle="collapse" data-bs-target="#collapseGetThere" aria-expanded="false" aria-controls="collapseGetThere" data-bs-parent="#accordionExample">
+                        <h5 class="mb-0">
+                            Get there
+                        </h5>
+                    </div>
+                    <div id="collapseGetThere" class="collapse" aria-labelledby="headingGetThere">
+                        <div class="card-body crd">
+                            <strong>Flying:</strong> Paris is served by two international airports: Paris-Charles de Gaulle (the second busiest airport in Europe) and Paris-Orly.
+                        </div>
+                        <div class="card-body crd">
+                            <strong>Train:</strong> The Gare du Nord is a major transit hub for trains to Northern France and international destinations in Belgium, Germany, the Netherlands, and the United Kingdom.
+                        </div>
+                        <div class="card-body crd">
+                            <strong>Best time to visit:</strong> Summer (June to August): Summer is festival season in Paris, with highlights including Paris L'Eté, Fnac Live, and Solidays, while the Bastille Day fireworks draw huge crowds and the Paris Plages festival brings the beach to the banks of the Seine. Temperatures average highs in the 70s F (20s C) and lows in the 50s F (Teens C).
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- On the Ground Section -->
+            <div class="col-4">
+                <div class="card crd">
+                    <div class="card-header crd" id="headingOnTheGround" data-bs-toggle="collapse" data-bs-target="#collapseOnTheGround" aria-expanded="false" aria-controls="collapseOnTheGround" data-bs-parent="#accordionExample">
+                        <h5 class="mb-0">
+                            On the ground
+                        </h5>
+                    </div>
+                    <div id="collapseOnTheGround" class="collapse" aria-labelledby="headingOnTheGround">
+                        <div class="card-body crd">
+                            <strong>Voltage/plug types:</strong> The standard voltage in France is 230V and the standard frequency is 50Hz. The plug has two round pins.
+                            <br>
+                            <strong>Drinking:</strong> The federal legal age for buying and drinking alcohol is 18 years old.
+                            <br>
+                            <strong>Walking:</strong> Walk to the right of the sidewalk and step off to the side of the sidewalk if you want to stop to check your phone, look up directions, or want to take in a view.
+                            <br>
+                            <strong>Public transport:</strong> Allow others to disembark before boarding, don’t take up more than one seat, and stand to offer seating to pregnant women or someone with a disability.
+                            <br>
+                            <strong>Try to speak the language:</strong> Learn a few basic phrases as a sign of respect. Locals will often switch to English for your ease and comfort but they appreciate the effort.
+                            <br>
+                            <strong>Always greet people:</strong> A courteous, formal greeting in French, “Bonjour, Monsieur/Madame,” is always appreciated — this includes shop attendants, wait staff, hotel staff, and drivers.
+                            <br>
+                            <strong>Don’t talk loudly in public:</strong> It is considered rude and ugly.
+                            <br>
+                            <strong>Don’t expect fast service:</strong> Sales assistants in shops or wait staff in restaurants won’t approach you straight away — giving people time and space is an important part of French culture. Also, don’t expect wait staff to give you the bill when your meal is finished; you will have to ask for it.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+            </div>
+            <div class="container px-4 py-5" id="featured-3" style=" color: antiquewhite; margin-top: 30px; border-radius: 30px; background-color: rgba(32, 5, 58, .6) ;  ">
+            <h2 class="pb-2 ">Basic Necessities: </h2> <hr>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="feature col">
+            
+            <h3 class="fs-2 ">Shopping: </h3>
+            <p>
+            1.Champs-Élysées <br>
+            2.Galeries Lafayette</p>
+            </div>
+            <div class="feature col">
+            
+            <h3 class="fs-2 ">SUPERMARKETS-          </h3>
+            <p>1.Carrefour <br>
+            <small>Specialty: Known for good value and <br> a large selection of products.</small> <br>
+            2.Franprix <br>
+            <small>Specialty: Convenient for quick shopping and <br> offers many organic and eco-friendly products.</small></p>
+            </div>
+            <div class="feature col">
+            
+            <h3 class="fs-2 ">HOSPITALS-</h3>
+            <p>1. Hôpital Pitié-Salpêtrière <br>
+            2. Hôpital Cochin</p>
+            </div>
+            </div>
+            <hr>
+            </div>
+            
+            
+            
+            
+            
+            
+            </div>           
+            <!-- <div class="chat-container">
+              <div class="chat-box" id="chat-box"></div>
+              <input type="text" id="user-input" class="input-box" placeholder="Type a message..." onkeydown="if(event.key === 'Enter'){ sendMessage(); }">
+              <iframe
+              src="https://aichatbot.sendbird.com/playground/index.html?app_id=BBD42528-9BD2-4D83-9AF5-5D502B4C3F61&bot_id=TpeHkm05W5PVT9p54DbiA&region=ap-8"
+              width="100%"
+              style="height: 100%; min-height: 700px"
+              frameborder="0"
+              ></iframe>  
+          </div> -->
+          <div class="emergency" >
+
+<header>
+  <h1>Emergency Services</h1>
+  <p>Your safety is our priority</p>
+</header>
+
+<nav>
+  <a href="#sos">SOS</a>
+  <a href="#resources">Resources</a>
+  <a href="#collaboration">Collaboration</a>
+  <a href="#contact">Contact Us</a>
+</nav>
+
+<main style="display:flex;  margin: auto;
+flex-direction:column; align-items:center;">
+  <section id="sos">
+      <div class="sos-button" onclick="triggerSOS()">Emergency SOS</div>
+  </section>
+
+  <section id="resources" class="resources">
+      <h2>Emergency Resources</h2>
+      <div class="resource-item">
+          <h3>Medical Assistance</h3>
+          <p>Call 911 for immediate medical help or visit your nearest hospital.</p>
+      </div>
+      <div class="resource-item">
+          <h3>Natural Disaster Preparedness</h3>
+          <p>Find safety guides and shelters in your area.</p>
+      </div>
+      <div class="resource-item">
+          <h3>Mental Health Support</h3>
+          <p>Reach out to <a href="https://www.mentalhealth.gov" target="_blank">MentalHealth.gov</a> for support.</p>
+      </div>
+  </section>
+
+  <section id="location">
+      <h2>Your Location</h2>
+      <div id="map" style="   height: 100%;
+      width: 100%; margin: 0;"></div>
+      <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29354.751412366473!2d79.8818304!3d23.1211008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1734687058647!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div id="panorama" style="width: 100%; height: 500px;"></div>
+      </div>
+  </section>
+
+  <section id="collaboration" class="collaboration">
+      <h2>Traveller Collaboration</h2>
+      <p>Connect with other travellers to share safety tips, routes, and emergency information.</p>
+      <form id="collaboration-form">
+          <label for="name">Your Name:</label><br>
+          <input type="text" id="name" name="name" required><br><br>
+
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+          <button type="button" onclick="submitCollaborationForm()">Submit</button>
+      </form>
+
+      <div id="collaboration-messages">
+          <h3>Messages:</h3>
+          <ul id="messages-list">
+              <!-- Messages will appear here -->
+          </ul>
+      </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2024 Emergency Services. All rights reserved.</p>
+</footer>
+
+          </div>
+
+                      </div>
+                                          
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+
+
+ 
+
+          </body>
+</html>
